@@ -15,8 +15,6 @@
         android:layout_height="80dp"
         android:layout_marginBottom="22dp"
         android:backgroundTint="#673AB7"
-        android:capitalize="characters"
-        android:editable="false"
         android:ems="10"
         android:foregroundTint="#00BCD4"
         android:inputType="textPersonName"
