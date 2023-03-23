@@ -5,7 +5,7 @@ import kotlin.math.roundToInt
 class GameEngine {
     private var wordsList = mutableListOf<String>("upset","sweat","worry","clock","coast","trade","carve",
         "north","sting","motif","panel","basin","equal","treat","ferry","colon","catch","worth","Koran","march",
-        "prize","knife","alarm","river","trick","yearn","award","miner","witch","brink","blame","raise","floor","issue","tempt")
+        "prize","knife","alarm","river","trick","yearn","award","miner","witch","brink","blame","raise","floor","issue","tempt","apply")
     private var currentWord = ""
     public fun generateWords(){
         //File("com/example/wordlegame/words.txt").useLines { lines -> wordsList.addAll(lines) }
