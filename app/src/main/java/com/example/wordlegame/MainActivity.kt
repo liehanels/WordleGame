@@ -137,6 +137,8 @@ class MainActivity : AppCompatActivity() {
             }
             else {
                 Toast.makeText(this, "Game Over ! Try again ^.^", Toast.LENGTH_LONG).show()
+                var word = game.getCurrentWord()
+                Toast.makeText(this, "The Word you were looking for was $word", Toast.LENGTH_LONG).show()
             }
         }
     }

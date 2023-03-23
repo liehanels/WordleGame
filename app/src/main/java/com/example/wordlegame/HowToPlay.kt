@@ -20,7 +20,7 @@ class HowToPlay : AppCompatActivity() {
                   "\t3.c\tDashes \' - \' replace incorrect letters\n" +
                   "4.\tContinue until you solve the word or run out of guesses.\n" +
                   "5.\tThe <Reset Game> button clears the game and changes the word.\n" +
-                  "Good luck !"
+                  "Good luck and have fun!"
         var lbl :TextView = findViewById(R.id.lblExplain)
         lbl.text = tip
         var back :Button = findViewById(R.id.btnBack)

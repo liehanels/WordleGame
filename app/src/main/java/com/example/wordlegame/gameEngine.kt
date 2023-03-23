@@ -11,9 +11,10 @@ class GameEngine {
         //File("com/example/wordlegame/words.txt").useLines { lines -> wordsList.addAll(lines) }
     }
     public fun getRandomWord() {
-        var number = (Math.random()*34).roundToInt()
+        var number = (Math.random()*35).roundToInt()
         currentWord = wordsList[number]
     }
+    public fun getCurrentWord(): String {return this.currentWord}
     public fun compareGuess(guess :String): String {
         var resultList = mutableListOf<String>()
         var i = 0
@@ -51,8 +52,6 @@ class GameEngine {
                     msg = "It seems as if you had $pos letters on the right place, $cont other letters that are in the word, but not in the correct position"
                 }
         }
-        result = ""
-        output = ""
         result = resultList[0] + resultList[1] + resultList[2] + resultList[3] + resultList[4]
         output = result + msg
         resultList.clear()
