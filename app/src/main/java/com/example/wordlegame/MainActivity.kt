@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         fun addAttempt(result :String, attempt :Int){
             if(attempt == 0){
                 L1R5txf.setText(result[0].toString())
+                //L1R5txf set edit false?
                 L2R5txf.setText(result[1].toString())
                 L3R5txf.setText(result[2].toString())
                 L4R5txf.setText(result[3].toString())
