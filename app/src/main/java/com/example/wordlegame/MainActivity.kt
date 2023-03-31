@@ -3,12 +3,11 @@ package com.example.wordlegame
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.ui.AppBarConfiguration
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,9 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
         //buttons
-        var guessButton :Button = findViewById(R.id.btnGuess)
-        var how2PlayButton :Button = findViewById(R.id.btnHowToPlay)
-        var resetButton :Button = findViewById(R.id.btnReset)
+        val guessButton :Button = findViewById(R.id.btnGuess)
+        val how2PlayButton :Button = findViewById(R.id.btnHowToPlay)
+        val resetButton :Button = findViewById(R.id.btnReset)
         //textView
         var titleLabel :TextView = findViewById(R.id.txtTitle)
         //editText - the whole damn grid
@@ -28,26 +27,50 @@ class MainActivity : AppCompatActivity() {
         var L3R1txf :EditText = findViewById(R.id.txtL3R1)
         var L4R1txf :EditText = findViewById(R.id.txtL4R1)
         var L5R1txf :EditText = findViewById(R.id.txtL5R1)
+
         var L1R2txf :EditText = findViewById(R.id.txtL1R2)
+        L1R2txf.visibility = View.GONE
         var L2R2txf :EditText = findViewById(R.id.txtL2R2)
+        L2R2txf.visibility = View.GONE
         var L3R2txf :EditText = findViewById(R.id.txtL3R2)
+        L3R2txf.visibility = View.GONE
         var L4R2txf :EditText = findViewById(R.id.txtL4R2)
+        L4R2txf.visibility = View.GONE
         var L5R2txf :EditText = findViewById(R.id.txtL5R2)
+        L5R2txf.visibility = View.GONE
+
         var L1R3txf :EditText = findViewById(R.id.txtL1R3)
+        L1R3txf.visibility = View.GONE
         var L2R3txf :EditText = findViewById(R.id.txtL2R3)
+        L2R3txf.visibility = View.GONE
         var L3R3txf :EditText = findViewById(R.id.txtL3R3)
+        L3R3txf.visibility = View.GONE
         var L4R3txf :EditText = findViewById(R.id.txtL4R3)
+        L4R3txf.visibility = View.GONE
         var L5R3txf :EditText = findViewById(R.id.txtL5R3)
+        L5R3txf.visibility = View.GONE
+
         var L1R4txf :EditText = findViewById(R.id.txtL1R4)
+        L1R4txf.visibility = View.GONE
         var L2R4txf :EditText = findViewById(R.id.txtL2R4)
+        L2R4txf.visibility = View.GONE
         var L3R4txf :EditText = findViewById(R.id.txtL3R4)
+        L3R4txf.visibility = View.GONE
         var L4R4txf :EditText = findViewById(R.id.txtL4R4)
+        L4R4txf.visibility = View.GONE
         var L5R4txf :EditText = findViewById(R.id.txtL5R4)
+        L5R4txf.visibility = View.GONE
+
         var L1R5txf :EditText = findViewById(R.id.txtL1R5)
+        L1R5txf.visibility = View.GONE
         var L2R5txf :EditText = findViewById(R.id.txtL2R5)
+        L2R5txf.visibility = View.GONE
         var L3R5txf :EditText = findViewById(R.id.txtL3R5)
+        L3R5txf.visibility = View.GONE
         var L4R5txf :EditText = findViewById(R.id.txtL4R5)
+        L4R5txf.visibility = View.GONE
         var L5R5txf :EditText = findViewById(R.id.txtL5R5)
+        L5R5txf.visibility = View.GONE
         //lists
         var guesses = mutableListOf<String>()
         var currentRow = mutableListOf<String>()
@@ -58,11 +81,15 @@ class MainActivity : AppCompatActivity() {
         fun addAttempt(result :String, attempt :Int){
             if(attempt == 0){
                 L1R5txf.setText(result[0].toString())
-                //L1R5txf set edit false?
                 L2R5txf.setText(result[1].toString())
                 L3R5txf.setText(result[2].toString())
                 L4R5txf.setText(result[3].toString())
                 L5R5txf.setText(result[4].toString())
+                L1R5txf.visibility = View.VISIBLE
+                L2R5txf.visibility = View.VISIBLE
+                L3R5txf.visibility = View.VISIBLE
+                L4R5txf.visibility = View.VISIBLE
+                L5R5txf.visibility = View.VISIBLE
             }
             else if(attempt == 1){
                 L1R4txf.setText(result[0].toString())
@@ -70,6 +97,11 @@ class MainActivity : AppCompatActivity() {
                 L3R4txf.setText(result[2].toString())
                 L4R4txf.setText(result[3].toString())
                 L5R4txf.setText(result[4].toString())
+                L1R4txf.visibility = View.VISIBLE
+                L2R4txf.visibility = View.VISIBLE
+                L3R4txf.visibility = View.VISIBLE
+                L4R4txf.visibility = View.VISIBLE
+                L5R4txf.visibility = View.VISIBLE
             }
             else if(attempt == 2){
                 L1R3txf.setText(result[0].toString())
@@ -77,6 +109,11 @@ class MainActivity : AppCompatActivity() {
                 L3R3txf.setText(result[2].toString())
                 L4R3txf.setText(result[3].toString())
                 L5R3txf.setText(result[4].toString())
+                L1R3txf.visibility = View.VISIBLE
+                L2R3txf.visibility = View.VISIBLE
+                L3R3txf.visibility = View.VISIBLE
+                L4R3txf.visibility = View.VISIBLE
+                L5R3txf.visibility = View.VISIBLE
             }
             else if(attempt == 3){
                 L1R2txf.setText(result[0].toString())
@@ -84,6 +121,11 @@ class MainActivity : AppCompatActivity() {
                 L3R2txf.setText(result[2].toString())
                 L4R2txf.setText(result[3].toString())
                 L5R2txf.setText(result[4].toString())
+                L1R2txf.visibility = View.VISIBLE
+                L2R2txf.visibility = View.VISIBLE
+                L3R2txf.visibility = View.VISIBLE
+                L4R2txf.visibility = View.VISIBLE
+                L5R2txf.visibility = View.VISIBLE
             }
             else if(attempt == 4){
                 L1R1txf.setText(result[0].toString())
@@ -129,17 +171,19 @@ class MainActivity : AppCompatActivity() {
                 guesses.add(currentRow[0]+currentRow[1]+currentRow[2]+currentRow[3]+currentRow[4])
                 currentRow.clear()
                 var guessNo = guesses[attempt] + " is guess number " + (attempt+1)
-                Toast.makeText(this, guessNo, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, guessNo+"", Toast.LENGTH_SHORT).show()
                 var result = game.compareGuess(guesses[attempt])
-                addAttempt(result, attempt)
+                addAttempt(result.substring(0, 5), attempt)
                 Toast.makeText(this, result.substring(5), Toast.LENGTH_LONG).show()
                 attempt++
                 if(attempt < 5){clearFirstRow()}
             }
-            else {
-                Toast.makeText(this, "Game Over ! Try again ^.^", Toast.LENGTH_LONG).show()
+            if (attempt > 4){
                 var word = game.getCurrentWord()
-                Toast.makeText(this, "The Word you were looking for was $word", Toast.LENGTH_LONG).show()
+                var titleT = "Word was $word"
+                titleLabel.text = titleT
+                Toast.makeText(this, "Game Over ! Tap 'Reset Game' to try again ^.^", Toast.LENGTH_LONG).show()
+                resetButton.requestFocus()
             }
         }
     }
